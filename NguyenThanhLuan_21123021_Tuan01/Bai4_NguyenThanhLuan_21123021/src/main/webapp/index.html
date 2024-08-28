@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<style>
+    form{
+        width: 50%;
+        padding: 10px;
+        border: 1px solid black;
+    }
+    h2{
+        text-align: left;
+    }
+    label{
+        display: block;
+        text-align: left;
+    }
+
+    #InputName{
+        display: block;
+        width: 100%;
+    }
+
+    .name {
+        display: inline-block;
+        width: 45%;
+    }
+
+    input{
+        width: 80%;
+        margin-bottom: 10px;
+    }
+    input[type="submit"]{
+        width: 100px;
+    }
+
+</style>
+<body>
+    <form action="result" method="post">
+        <h2>Register</h2>
+        <label for="Name">Name*</label>
+        <div id="InputName">
+            <div class="name">
+                <input type="text" id="FisrtName" name="FisrtName">
+                <label for="Name">First</label>
+            </div>
+            <div class="name">
+                <input type="text" id="LastName" name="LastName">
+                <label for="Name">Last</label>
+            </div>
+        </div>
+        <br><br>
+
+        <label for="Email">UserName*</label>
+        <input type="text" id="UserName" name="UserName"><br><br>
+
+        <label for="Email">E-mail*</label>
+        <input type="text" id="Email" name="Email"><br><br>
+        
+        <label for="Password">Password*</label>
+        <input type="password" id="Password" name="Password"><br><br>
+        
+        <div>
+            <label for="Facebook">Facebook</label>
+            <input type="text" id="Facebook" name="Facebook"><br><br>
+            <label for="" style="font-size: 12;">Enter a little Facebook profile URL</label>
+        </div>
+
+        <label for="ShortBio">Short Bio:</label>
+        <textarea name="ShortBio" id="ShortBio" cols="60%" rows="10"></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

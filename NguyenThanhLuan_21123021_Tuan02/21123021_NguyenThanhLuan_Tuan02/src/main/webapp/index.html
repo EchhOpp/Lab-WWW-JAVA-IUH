@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- Upload file -->
+    <div id="main">
+        <h1>
+            Upload multi-files
+        </h1>
+
+        <form method="POST" action="fileUpload" enctype="multipart/form-data">
+            <label for="file1">File #1:</label>
+            <input type="file" name="file1" id="file1" multiple="multiple" />
+            <br>
+            <label for="file2">File #2:</label>
+            <input type="file" name="file2" id="file2" multiple="multiple"/>
+            <br>
+            <label for="file3">File #3:</label>
+            <input type="file" name="file3" id="file3" multiple="multiple"/>
+            <br>
+            <label for="file4">File #4:</label>
+            <input type="file" name="file4" id="file4" multiple="multiple"/>
+            <br>
+            <label for="file5">File #5:</label>
+            <input type="file" name="file5" id="file5" multiple="multiple"/>
+            <br>
+            <br>
+            <input type="submit" value="Upload" value="Upload" name="upload" id="upload" />
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <div id="main" style="display: block; width: 40%;">
+        <div id="nav" style="text-align: center;">
+            <h1>File upload to Database</h1><br>
+            <h1>(multipart/form-data)</h1>
+        </div>
+
+        <form method="POST" action="FileUploadDBServlet"></form>
+    </div>
+</body>
+</html>
