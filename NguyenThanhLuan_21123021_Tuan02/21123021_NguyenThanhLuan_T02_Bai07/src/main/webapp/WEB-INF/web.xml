@@ -19,5 +19,16 @@
   	<servlet-name>FileUploadDBServlet</servlet-name>
   	<url-pattern>/FileUploadDBServlet</url-pattern>
   </servlet-mapping>
+
+   <!-- Add the MessageServlet definition -->
+  <servlet>
+    <servlet-name>MessageServlet</servlet-name>
+    <servlet-class>fit.bai07.MessageServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>MessageServlet</servlet-name>
+    <url-pattern>/MessageServlet</url-pattern>
+  </servlet-mapping>
   
 </web-app>
