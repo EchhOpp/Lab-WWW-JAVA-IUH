@@ -56,19 +56,21 @@ public class bai08_JavaMail extends HttpServlet {
 		
 		properties.setProperty("mail.smtp.host", host);
 		
-		Session session = Session.getDefaultInstance(properties);
+		Session session = Session.getDefaultInstance (properties);
 		
 		try {
 			MimeMessage message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(from));
 			message.addRecipient(MimeMessage.RecipientType.TO, new InternetAddress(to));
+
 			message.setSubject("This is the Subject Line!");
-			
 			BodyPart messageBodyPart = new MimeBodyPart();
 			
 			messageBodyPart.setText("Message body");// Nội dung
+
 			Multipart multipart = new MimeMultipart();// Email sẽ gồm 2 part (text, file attached)
 			multipart.addBodyPart(messageBodyPart); // Phần text
+
 			// Phần xử lý với file attached
 			messageBodyPart = new MimeBodyPart();
 			
