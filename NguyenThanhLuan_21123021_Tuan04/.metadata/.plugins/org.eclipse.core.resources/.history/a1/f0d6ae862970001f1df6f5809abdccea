@@ -1,0 +1,7 @@
+package student;
+
+public class Qualification {
+	private String board;
+	private String percentage;
+	private String year;
+}

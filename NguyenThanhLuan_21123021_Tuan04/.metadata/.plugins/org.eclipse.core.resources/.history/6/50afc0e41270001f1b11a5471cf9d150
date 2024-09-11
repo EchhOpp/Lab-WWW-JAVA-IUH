@@ -1,0 +1,53 @@
+package servletStudent;
+
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import student.Student;
+
+/**
+ * Servlet implementation class ServletStudent
+ */
+@WebServlet("/ServletStudent")
+public class ServletStudent extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    /**
+     * Default constructor. 
+     */
+    public ServletStudent() {
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Get the parameters from the form
+		String studentFName = request.getParameter("studentFName");
+		String studentLName = request.getParameter("studentLName");
+		String studentDOB = request.getParameter("studentDOB");
+		String studentEmail = request.getParameter("studentEmail");
+		String studentPhone = request.getParameter("studentPhone");
+		String studentGender = request.getParameter("gender");
+		String studentAddress = request.getParameter("studentAddress");
+		String studentCity = request.getParameter("studentCity");
+		
+		Student student = new Student(studentFName, studentLName, studentDOB, studentEmail, studentPhone, studentGender, studentAddress, studentCity);
+		request.setAttribute("student", student);
+		request.getRequestDispatcher("studentDetails.jsp").forward(request, response);
+	}
+
+}

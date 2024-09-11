@@ -1,0 +1,5 @@
+INDEX VERSION 1.134
+T:\exercise\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1671068364.index
+\JSPWithForm\src\main\java
+D:\BaiTap\WWW\NguyenThanhLuan_21123021_Tuan04\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1671068364.index
+\JSPWithForm\src\main\java
