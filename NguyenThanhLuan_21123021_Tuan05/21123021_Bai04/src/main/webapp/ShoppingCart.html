@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <table id="cart">
+        <tr>
+            <th>Model Description</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td>Cart is currently empty</td>
+        </tr>
+        <tr>
+            <td colspan="3">Total</td>
+            <td>0</td>
+        </tr>
+    </table>
+</body>
+<style>
+    #cart {
+        font-family: Arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #cart td, #cart th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #cart tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #cart tr:hover {
+        background-color: #ddd;
+    }
+
+    #cart th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+</html>

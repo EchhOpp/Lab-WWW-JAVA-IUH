@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <div id="main">
+        <a href="./ShoppingCart.html">View Cart</a>
+        <br>
+        <div id="listproduct">
+            <div class="product">
+                <div class="nameProduct">Banh trung thu</div>
+                <img src="./images/trungthu1.jpg" alt="1" class="img">
+                <br>
+                <input type="number" id="product1" value="1" >
+                <br>
+                <div class="price">Price: 1000</div>
+                <br>
+                <button onclick="addProductToCart(1)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="nameProduct">Ip mini</div>
+                <img src="./images/dt.jpg" alt="1" class="img">
+                <br>
+                <input type="number" id="product1" value="1" >
+                <br>
+                <div class="price">Price: 1000</div>
+                <br>
+                <button onclick="addProductToCart(1)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="nameProduct">ip 15</div>
+                <img src="./images/ip15.jpg" alt="1" class="img">
+                <br>
+                <input type="number" id="product1" value="1" >
+                <br>
+                <div class="price">Price: 15000</div>
+                <br>
+                <button onclick="addProductToCart(1)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="nameProduct">Banh trung thu</div>
+                <img src="./images/trungthu1.jpg" alt="1" class="img">
+                <br>
+                <input type="number" id="product1" value="1" >
+                <br>
+                <div class="price">Price: 1000</div>
+                <br>
+                <button onclick="addProductToCart(1)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="nameProduct">Ip mini</div>
+                <img src="./images/dt.jpg" alt="1" class="img">
+                <br>
+                <input type="number" id="product1" value="1" >
+                <br>
+                <div class="price">Price: 1000</div>
+                <br>
+                <button onclick="addProductToCart(1)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="nameProduct">ip 15</div>
+                <img src="./images/ip15.jpg" alt="1" class="img">
+                <br>
+                <input type="number" id="product1" value="1" >
+                <br>
+                <div class="price">Price: 15000</div>
+                <br>
+                <button onclick="addProductToCart(1)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    #main {
+        width: 800px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    #listproduct {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .product {
+        width: 28%;
+        height: 280px;
+        border: 1px solid black;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    #nameProduct {
+        margin-bottom: 10px;
+    }
+
+    #product1 {
+        width: 30%;
+    }
+
+    .img {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+        margin: 10px 0;
+    }
+</style>
+</html>
