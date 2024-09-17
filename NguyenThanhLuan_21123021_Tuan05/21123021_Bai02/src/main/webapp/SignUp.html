@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <div id="main">
+        <form action="modelViewController" method="post" style="margin: 50";>
+            <div id="userRegistrationForm">
+                <h1>User Registrantion Form</h1>
+            </div>
+            <div id="formInput" style="margin: 50;">
+                <div id="name">
+                    <input type="text" name="fname" placeholder="fname" />
+                    <input type="text" name="lname" placeholder="lname" />
+                </div>
+                <div id="email" style="width: 100%;">
+                    <input type="email" name="email" placeholder="email"/>
+                </div>
+                <div id="re-enter-mail">
+                    <input type="email" name="re-email" placeholder="Re-enter Email" />
+                </div>
+                <div id="password">
+                    <input type="password" name="password" placeholder="New Password" />
+                </div>
+                <div id="birthday">
+                    <select name="day" id="day">
+                        <option value="0">Day</option>
+                        <script>
+                            for(var i = 1; i < 32; i++){
+                                document.write('<option value="'+ i +'">' + i + '</option>');
+                            }
+                        </script>
+                    </select>
+                    <select name="month" id="month" required>
+                        <option value="">Month</option>
+                        <!-- Options for months 1-12 -->
+                        <script>
+                            for (var i = 1; i <= 12; i++) {
+                                document.write('<option value="' + i + '">' + i + '</option>');
+                            }
+                        </script>
+                    </select>
+                    <select name="year" id="year" required>
+                        <option value="">Year</option>
+                        <!-- Options for years from 1900 to current year -->
+                        <script>
+                            var currentYear = new Date().getFullYear();
+                            for (var i = currentYear; i >= 1900; i--) {
+                                document.write('<option value="' + i + '">' + i + '</option>');
+                            }
+                        </script>
+                    </select>
+                </div>
+                <div id="gender">
+                    Female
+                    <input type="radio" value="Female" name="gender" />
+                    Male
+                    <input type="radio" value="Male" name="gender" />
+                </div>
+                <div id="submit">
+                    <input type="submit" value="Sign Up" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>
