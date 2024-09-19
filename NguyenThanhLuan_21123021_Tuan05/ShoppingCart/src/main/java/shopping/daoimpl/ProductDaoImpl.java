@@ -3,11 +3,11 @@ package shopping.daoimpl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;
 
-import jakarta.annotation.Resource;
 import shopping.dao.ProductDao;
 import shopping.entity.Product;
 
@@ -15,8 +15,6 @@ public class ProductDaoImpl implements ProductDao {
 	
 	private DataSource dataSource;
 	
-	
-
 	public ProductDaoImpl(DataSource dataSource) {
 		super();
 		this.dataSource = dataSource;
@@ -29,26 +27,26 @@ public class ProductDaoImpl implements ProductDao {
 
 	@Override
 	public List<Product> getAllProducts() {
-		// TODO Auto-generated method stub
-		List<Product> products = null;
-		String query = "SELECT * FROM Product";
-		try(
-				Connection conn = this.dataSource.getConnection();
-				PreparedStatement ps = conn.prepareStatement(query);
-				ResultSet rs = ps.executeQuery();
-				) {
-			while(rs.next()) {
-				Product product = new Product();
-				product.setId(rs.getInt("id"));
-				product.setName(rs.getString("name"));
-				product.setPrice(rs.getDouble("price"));
-				product.setImage(rs.getString("image"));
-				products.add(product);
-			}
-		} catch (Exception e) {
-			return null;
-		}
-		return products;
+		 	List<Product> products = new ArrayList<>(); // Khởi tạo danh sách products
+	        String query = "SELECT * FROM Product"; // Đảm bảo rằng cột image tồn tại
+	        try (
+	            Connection conn = this.dataSource.getConnection();
+	            PreparedStatement ps = (PreparedStatement) conn.prepareStatement(query);
+	            ResultSet rs = ps.executeQuery();
+	        ) {
+	            while (rs.next()) {
+	                Product product = new Product();
+	                product.setId(rs.getInt("id"));
+	                product.setName(rs.getString("name"));
+	                product.setPrice(rs.getDouble("price"));
+	                product.setImage(rs.getString("img"));
+	                products.add(product);
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            return null;
+	        }
+	        return products;
 	}
 
 	@Override
