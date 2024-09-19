@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>Bai04_Shopping</groupId>
-  <artifactId>Bai04_Shopping</artifactId>
+  <groupId>ShoppingCart_Bai04</groupId>
+  <artifactId>ShoppingCart_Bai04</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <build>
@@ -21,28 +21,29 @@
     </plugins>
   </build>
   <dependencies>
-	<!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
-	<dependency>
-	    <groupId>jakarta.servlet</groupId>
-	    <artifactId>jakarta.servlet-api</artifactId>
-	    <version>6.0.0</version>
-	    <scope>provided</scope>
-	</dependency>
+  	<!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+<dependency>
+    <groupId>jakarta.servlet</groupId>
+    <artifactId>jakarta.servlet-api</artifactId>
+    <version>6.0.0</version>
+    <scope>provided</scope>
+</dependency>
 
-	<!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp/jakarta.servlet.jsp-api -->
-	<dependency>
-	    <groupId>jakarta.servlet.jsp</groupId>
-	    <artifactId>jakarta.servlet.jsp-api</artifactId>
-	    <version>3.1.1</version>
-	    <scope>provided</scope>
-	</dependency>
-	
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
-	<dependency>
-	    <groupId>com.fasterxml.jackson.core</groupId>
-	    <artifactId>jackson-core</artifactId>
-	    <version>2.17.2</version>
-	</dependency>
+<!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp/jakarta.servlet.jsp-api -->
+<dependency>
+    <groupId>jakarta.servlet.jsp</groupId>
+    <artifactId>jakarta.servlet.jsp-api</artifactId>
+    <version>3.1.1</version>
+    <scope>provided</scope>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-core</artifactId>
+    <version>2.17.2</version>
+</dependency>
+
 <!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
 <dependency>
     <groupId>jakarta.servlet.jsp.jstl</groupId>
@@ -57,12 +58,21 @@
     <version>3.0.1</version>
 </dependency>
 
+<!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
+<dependency>
+    <groupId>org.mariadb.jdbc</groupId>
+    <artifactId>mariadb-java-client</artifactId>
+    <version>3.4.1</version>
+</dependency>
+
 <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
 <dependency>
     <groupId>com.microsoft.sqlserver</groupId>
     <artifactId>mssql-jdbc</artifactId>
     <version>11.2.3.jre17</version>
 </dependency>
+
+
 
   </dependencies>
 </project>
