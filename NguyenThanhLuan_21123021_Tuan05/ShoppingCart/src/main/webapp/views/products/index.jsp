@@ -102,7 +102,7 @@
                         </td>
                         <td>
                             <button>
-                                <a href="${pageContext.request.contextPath}/CartController">Add to Cart</a>
+                                <a href="${pageContext.request.contextPath}/cart">Add to Cart</a>
                             </button>
                         </td>
                     </tr>

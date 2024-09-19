@@ -17,7 +17,7 @@ import shopping.daoimpl.ProductDaoImpl;
 /**
  * Servlet implementation class CartController
  */
-@WebServlet("/CartController")
+@WebServlet(urlPatterns = {"/cart", "/cart*" })
 public class CartController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
