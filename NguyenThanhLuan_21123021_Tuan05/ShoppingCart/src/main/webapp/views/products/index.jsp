@@ -1,62 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="jakarta.tags.core" prefix="c"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="jstl" uri="http://java.sun.com/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
- <!-- View product -->
-    <div id="main">
-        <!-- title -->
-        <div id="title">
-            <h1>Product List</h1>
-            <button>
-                <a href="CartController">Add Product</a>
-            </button>
-        </div>
-        <!-- product list -->
-         <table>
-            <thead>
-                <th>
-                    Name Product
-                </th>
-                <th>
-                    Image
-                </th>
-                <th>
-                    Price
-                </th>
-                <th>
-                    Quantity
-                </th>
-                <th>
-                    Action
-                </th>
-            </thead>
-            <tbody>
-                <c:forEach var="product" items="${products}" >
-                    <tr>
-                        <td>${product.name}</td>
-                        <td>
-                        	<img src="${product.image}" width="100px" height="100px">
-                        </td>
-                        <td>${product.price}</td>
-                        <td>
-                            <input type="number" value="1" min="1" max="100">
-                        </td>
-                        <td>
-                            <button>
-                                <a href="CartController">Add to Cart</a>
-                            </button>
-                        </td>
-                    </tr>
-                </c:forEach>
-         </table>
-    </div>
-</body>
+<title>List product</title>
 <style>
     #main {
         margin: 0 auto;
@@ -108,4 +59,56 @@
         color: white;
     }
 </style>
+</head>
+<body>
+ <!-- View product -->
+    <div id="main">
+        <!-- title -->
+        <div id="title">
+            <h1>Product List</h1>
+            <button>
+                <a href="<% request.getContextPath(); %>" >Add Product</a>
+            </button>
+        </div>
+        <!-- product list -->
+         <table>
+            <thead>
+                <th>
+                    Name Product
+                </th>
+                <th>
+                    Image
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Action
+                </th>
+            </thead>
+            <tbody>
+                <c:forEach var="product" items="${products}" >
+                    <tr>
+                        <td>${product.name}</td>
+                        <td>
+                        	<img src="${pageContext.request.contextPath}/resources/images/${product.image}" alt="${product.name}" width="100" height="100">
+                        </td>
+                        <td>${product.price}</td>
+                        <td>
+                            <input type="number" value="1" min="1" max="100">
+                        </td>
+                        <td>
+                            <button>
+                                <a href="${pageContext.request.contextPath}/CartController">Add to Cart</a>
+                            </button>
+                        </td>
+                    </tr>
+                </c:forEach>
+         </table>
+    </div>
+</body>
+
 </html>

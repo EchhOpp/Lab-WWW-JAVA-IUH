@@ -46,6 +46,7 @@ public class ProductDaoImpl implements ProductDao {
 	            e.printStackTrace();
 	            return null;
 	        }
+	        System.out.println(products);
 	        return products;
 	}
 
