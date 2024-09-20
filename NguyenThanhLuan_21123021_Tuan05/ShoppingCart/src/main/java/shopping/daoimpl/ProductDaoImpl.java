@@ -53,21 +53,24 @@ public class ProductDaoImpl implements ProductDao {
 	@Override
 	public Product getProductById(int id) {
 		// TODO Auto-generated method stub
-		String query = "SELECT * FROM product WHERE id = ?";
 		Product product = null;
-		try (Connection conn = this.dataSource.getConnection(); PreparedStatement ps = conn.prepareStatement(query);) {
+		String query = "SELECT * FROM product WHERE id = ?";
+		
+		try (
+				Connection conn = this.dataSource.getConnection(); 
+				PreparedStatement ps = (PreparedStatement) conn.prepareStatement(query);
+			) {
 			ps.setInt(1, id);
-			try (ResultSet rs = ps.executeQuery();) {
-				if (rs.next()) {
-					product = new Product();
-					product.setId(rs.getInt("id"));
-					product.setName(rs.getString("name"));
-					product.setPrice(rs.getDouble("price"));
-					product.setImage(rs.getString("image"));
-				}
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				int productId = rs.getInt("id");
+				String name = rs.getString("name");
+				double price = rs.getDouble("price");
+				String image = rs.getString("img");
+				product = new Product(productId, name, price, image);
 			}
 		} catch (Exception e) {
-			return null;
+			e.printStackTrace();
 		}
 		return product;
 	}
