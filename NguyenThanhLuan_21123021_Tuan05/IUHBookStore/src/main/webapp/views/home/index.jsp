@@ -13,9 +13,17 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: green;
-        padding: 10px;
-        margin: 10px 10px;
+        background-color: #a09380;
+        padding: 10px 20px;
+    }
+    
+    h1 {
+        color: white;
+        background-color: #75736b;
+        width: 300px;
+        padding: 4px;
+        border-radius: 5px;
+        text-align: center;
     }
 
     #topleft {
@@ -35,10 +43,14 @@
         border-radius: 5px;
         margin: 0 5px;
     }
+    .btn {
+        color: white;
+        background-color: #75736b;
+    }
     #body {
         display: flex;
         justify-content: space-between;
-        padding: 10px;
+        padding: 8px 0;
     }
     #bodyleft {
         flex: 1;
@@ -46,7 +58,7 @@
     }
     #bodyleft-aboutus {
         background-color: rgb(184, 184, 184);
-        padding: 10px;
+        padding: 8px 20px;
 
     }
     #bodyright {
@@ -92,10 +104,7 @@
             <div id="bodyleft-aboutus">
                 <h2>About us</h2>
                 <p style="text-align: justify;">
-                    IUH Bookstore is a website that provides books for students at
-                    IUH. We have a lot of books in many fields such as IT, Business,
-                    Marketing, etc. We also have a lot of services for students such
-                    as renting books, buying books, etc.
+                    IUH Bookstore is a website that.... <b>Read More >></b>
                 </p>
             </div>
             <div id="bodyleft-searchSite">
