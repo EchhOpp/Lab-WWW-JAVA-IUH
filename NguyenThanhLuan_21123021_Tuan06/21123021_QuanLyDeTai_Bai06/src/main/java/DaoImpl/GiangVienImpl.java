@@ -90,12 +90,29 @@ public class GiangVienImpl implements GiangVienDao{
 	@Override
 	public boolean updateGiangVien(GiangVien giangVien) {
 		// TODO Auto-generated method stub
+		String query = "UPDATE GiangVien SET TenGiangVien = ?, LinhVucNghienCuu = ?, SoDienThoai = ? WHERE MaGiangVien = ?";
+		try (PreparedStatement ps = (PreparedStatement) dataSource.getConnection().prepareStatement(query);) {
+			ps.setString(1, giangVien.getTenGiangVien());
+			ps.setString(2, giangVien.getLinhVucNghienCuu());
+			ps.setString(3, giangVien.getSoDienThoai());
+			ps.setString(4, giangVien.getMaGiangVien());
+			return ps.executeUpdate() > 0;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return false;
 	}
 
 	@Override
 	public boolean deleteGiangVien(String id) {
 		// TODO Auto-generated method stub
+		String query = "DELETE FROM GiangVien WHERE MaGiangVien = ?";
+		try (PreparedStatement ps = (PreparedStatement) dataSource.getConnection().prepareStatement(query);) {
+			ps.setString(1, id);
+			return ps.executeUpdate() > 0;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return false;
 	}
 
