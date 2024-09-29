@@ -10,6 +10,7 @@ import javax.sql.DataSource;
 import dao.DeTaiDao;
 import dao.GiangVienDao;
 import entity.DeTai;
+import entity.GiangVien;
 
 public class DeTaiImpl implements DeTaiDao{
 	
@@ -19,7 +20,6 @@ public class DeTaiImpl implements DeTaiDao{
 //	private String soDienThoai;
 	
 	private DataSource dataSource;
-	private GiangVienDao giangVienDao;
 	
 	
 	
@@ -27,12 +27,10 @@ public class DeTaiImpl implements DeTaiDao{
 	public DeTaiImpl(DataSource dataSource) {
 		super();
 		this.dataSource = dataSource;
-		this.giangVienDao = giangVienDao;
 	}
 
 	public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
-        giangVienDao = new GiangVienImpl(dataSource);
     }
 
 	@Override
@@ -50,8 +48,8 @@ public class DeTaiImpl implements DeTaiDao{
 				String tenDeTai = rs.getString("TenDeTai");
 				String namDK = rs.getString("NamDangKy");
 				String moTa = rs.getString("MoTaDeTai");
-				String maGiangVien = rs.getString("MaGiangVien");
-				DeTai deTai = new DeTai(maDeTai, tenDeTai, namDK, moTa, giangVienDao.getGiangVien(maGiangVien));
+				String maGiangVien = rs.getString("MaGV");
+				DeTai deTai = new DeTai(maDeTai, tenDeTai, namDK, moTa, new GiangVien(maGiangVien));
 				list.add(deTai);
 			}
 			

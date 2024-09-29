@@ -5,9 +5,14 @@ public class GiangVien {
 	private String tenGiangVien;
 	private String linhVucNghienCuu;
 	private String soDienThoai;
-	
+
 	public GiangVien() {
 		super();
+	}
+
+	public GiangVien(String maGiangVien) {
+		super();
+		this.maGiangVien = maGiangVien;
 	}
 
 	public GiangVien(String maGiangVien, String tenGiangVien, String linhVucNghienCuu, String soDienThoai) {

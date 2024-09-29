@@ -36,3 +36,8 @@ VALUES
 ('DT03', 'Project C', '2022', 'Description of Project C', 'GV03'),
 ('DT04', 'Project D', '2022', 'Description of Project D', 'GV04'),
 ('DT05', 'Project E', '2022', 'Description of Project E', 'GV05');
+('DT011', 'Project AA', '2022', 'Description of Project A', 'GV01'),
+('DT022', 'Project BB', '2022', 'Description of Project B', 'GV02'),
+('DT033', 'Project CC', '2022', 'Description of Project C', 'GV03'),
+('DT044', 'Project DD', '2022', 'Description of Project D', 'GV04'),
+('DT055', 'Project EE', '2022', 'Description of Project E', 'GV05');

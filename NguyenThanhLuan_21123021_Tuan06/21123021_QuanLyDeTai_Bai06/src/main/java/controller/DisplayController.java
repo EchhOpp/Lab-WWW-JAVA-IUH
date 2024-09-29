@@ -8,26 +8,34 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 import javax.sql.DataSource;
 
+import dao.DeTaiDao;
 import dao.GiangVienDao;
+import daoImpl.DeTaiImpl;
 import daoImpl.GiangVienImpl;
+import entity.DeTai;
+import entity.GiangVien;
 
 /**
  * Servlet implementation class GiangVienController
  */
-public class GiangVienController extends HttpServlet {
+@WebServlet( urlPatterns = {"/displayTeacher"})
+public class DisplayController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private GiangVienDao giangVienDAO;
+	private DeTaiDao deTaiDao;
+	
 	@Resource(name = "jdbc/QuanLyDeTai")
 	private DataSource dataSource;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GiangVienController() {
+    public DisplayController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,11 +45,15 @@ public class GiangVienController extends HttpServlet {
     	super.init(config);
     	try {
 			System.out.println("GiangVienController: init" + this.dataSource.getConnection());
+			System.out.println("GiangVienController: init" + this.dataSource.getConnection());
+			giangVienDAO = new GiangVienImpl(dataSource);
+	    	deTaiDao = new DeTaiImpl(dataSource);
+	    	System.out.println(giangVienDAO.getAllGiangVien());
+	    	System.out.println(deTaiDao.getAllDeTai());
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-    	giangVienDAO = new GiangVienImpl(dataSource);
     }
 
 	/**
@@ -49,7 +61,15 @@ public class GiangVienController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+        List<GiangVien> giaoVienList = giangVienDAO.getAllGiangVien();
+        request.setAttribute("giaoVienList", giaoVienList);
+        
+        List<DeTai> deTaiList = deTaiDao.getAllDeTai();
+        request.setAttribute("deTaiList", deTaiList);
+        
+        System.out.println(request.getAttribute("giaoVienList"));
+        System.out.println(request.getAttribute("deTaiList"));
+		request.getRequestDispatcher("displaytable/index.jsp").forward(request, response);
 	}
 
 	/**

@@ -13,8 +13,6 @@ import entity.GiangVien;
 public class GiangVienImpl implements GiangVienDao{
 	
 	private DataSource dataSource;
-	
-	
 
 	public GiangVienImpl(DataSource dataSource) {
 		super();
@@ -34,8 +32,8 @@ public class GiangVienImpl implements GiangVienDao{
 //				private String tenGiangVien;
 //				private String linhVucNghienCuu;
 //				private String soDienThoai;
-				String maGiangVien = rs.getString("MaGiangVien");
-				String tenGiangVien = rs.getString("TenGiangVien");
+				String maGiangVien = rs.getString("MaGV");
+				String tenGiangVien = rs.getString("TenGV");
 				String linhVucNghienCuu = rs.getString("LinhVucNghienCuu");
 				String soDienThoai = rs.getString("SoDienThoai");
 				GiangVien giangVien = new GiangVien(maGiangVien, tenGiangVien, linhVucNghienCuu, soDienThoai);
@@ -52,17 +50,17 @@ public class GiangVienImpl implements GiangVienDao{
 
 	@Override
 	public GiangVien getGiangVien(String id) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub]
 		GiangVien giangVien = new GiangVien();
-		String query = "SELECT * FROM GiangVien WHERE MaGiangVien = ?";
+		String query = "SELECT * FROM GiangVien WHERE MaGV = ?";
 		try (
                 PreparedStatement ps = (PreparedStatement) dataSource.getConnection().prepareStatement(query);
                 ){
 			ps.setString(1, id);
             ResultSet rs = ps.executeQuery();
             if(rs.next()) {
-                giangVien.setMaGiangVien(rs.getString("MaGiangVien"));
-                giangVien.setTenGiangVien(rs.getString("TenGiangVien"));
+                giangVien.setMaGiangVien(rs.getString("MaGV"));
+                giangVien.setTenGiangVien(rs.getString("TenGV"));
                 giangVien.setLinhVucNghienCuu(rs.getString("LinhVucNghienCuu"));
                 giangVien.setSoDienThoai(rs.getString("SoDienThoai"));
             }
