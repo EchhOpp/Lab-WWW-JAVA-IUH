@@ -1,0 +1,8 @@
+<context>
+	<Resource name="jdbc/QuanLyTinTuc" auth="Container" type="javax.sql.DataSource" 
+		maxActive="50" maxIdle="30" maxWait="1000"
+		username="sa" password="sapassword"
+		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+		url="jdbc:sqlserver://localhost:1433;encrypt=false;databaseName=QuanLyTinTuc"
+		URIEncoding="UTF-8" />
+</context>
