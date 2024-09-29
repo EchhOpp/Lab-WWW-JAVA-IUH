@@ -1,4 +1,4 @@
-package DaoImpl;
+package daoImpl;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,7 +7,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import Dao.GiangVienDao;
+import dao.GiangVienDao;
 import entity.GiangVien;
 
 public class GiangVienImpl implements GiangVienDao{

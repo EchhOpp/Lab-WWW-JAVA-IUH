@@ -1,4 +1,4 @@
-package DaoImpl;
+package daoImpl;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,8 +7,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import Dao.DeTaiDao;
-import Dao.GiangVienDao;
+import dao.DeTaiDao;
+import dao.GiangVienDao;
 import entity.DeTai;
 
 public class DeTaiImpl implements DeTaiDao{

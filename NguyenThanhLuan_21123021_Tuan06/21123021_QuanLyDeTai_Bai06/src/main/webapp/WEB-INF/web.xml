@@ -9,4 +9,24 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>DeTaiController</display-name>
+    <servlet-name>DeTaiController</servlet-name>
+    <servlet-class>controller.DeTaiController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeTaiController</servlet-name>
+    <url-pattern>/DeTaiController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GiangVienController</display-name>
+    <servlet-name>GiangVienController</servlet-name>
+    <servlet-class>controller.GiangVienController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GiangVienController</servlet-name>
+    <url-pattern>/GiangVienController</url-pattern>
+  </servlet-mapping>
 </web-app>
