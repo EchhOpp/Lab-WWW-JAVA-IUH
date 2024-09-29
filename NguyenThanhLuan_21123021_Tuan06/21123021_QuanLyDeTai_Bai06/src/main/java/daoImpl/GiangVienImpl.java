@@ -14,7 +14,10 @@ public class GiangVienImpl implements GiangVienDao{
 	
 	private DataSource dataSource;
 	
-	public void setDataSource(DataSource dataSource) {
+	
+
+	public GiangVienImpl(DataSource dataSource) {
+		super();
 		this.dataSource = dataSource;
 	}
 

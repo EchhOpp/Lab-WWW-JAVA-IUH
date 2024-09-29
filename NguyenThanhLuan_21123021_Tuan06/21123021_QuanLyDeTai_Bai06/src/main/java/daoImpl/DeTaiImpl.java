@@ -21,9 +21,18 @@ public class DeTaiImpl implements DeTaiDao{
 	private DataSource dataSource;
 	private GiangVienDao giangVienDao;
 	
+	
+	
+
+	public DeTaiImpl(DataSource dataSource) {
+		super();
+		this.dataSource = dataSource;
+		this.giangVienDao = giangVienDao;
+	}
+
 	public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
-        giangVienDao = new GiangVienImpl();
+        giangVienDao = new GiangVienImpl(dataSource);
     }
 
 	@Override
