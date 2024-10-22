@@ -1,0 +1,54 @@
+<%@ import="java.util.Date"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="ServletStudent" method="post">
+		<table>
+			<tr>
+				<td>Student first name:</td>
+				<td><input type="text" name="studentFName"></td>
+			</tr>
+			<tr>
+				<td>Student last name:</td>
+				<td><input type="text" name="studentLName"></td>
+			</tr>
+			<tr>
+				<td>Student date of birth:</td>
+				<td><input type="date" name="studentDOB"></td>
+			</tr>
+			<tr>
+				<td>Student Email:</td>
+				<td><input type="text" name="studentEmail"></td>
+			</tr>
+			<tr>
+				<td>Student Phone:</td>
+				<td><input type="text" name="studentPhone"></td>
+			</tr>
+			<tr>
+				<td>Student Address:</td>
+				<td>
+					<input type="radio" name="gender" id="male" value="Male">Male
+					<input type="radio" name="gender" id="female" value="Female">Female
+				</td>
+			</tr>
+			<tr>
+				<td>Student Address:</td>
+				<td><textarea name="studentAddress" rows="4" cols="50"></textarea></td>
+			</tr>
+			<tr>
+				<td>Student City:</td>
+				<td><input type="text" name="studentCity"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Submit"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

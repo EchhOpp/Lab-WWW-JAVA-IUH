@@ -1,0 +1,210 @@
+package servletStudent;
+
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import student.Student;
+import student.Qualification;
+
+/**
+ * Servlet implementation class ServletStudent
+ */
+@WebServlet("/ServletStudent")
+public class ServletStudent extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    /**
+     * Default constructor. 
+     */
+    public ServletStudent() {
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Get the parameters from the form	
+//		<table>
+//		<tr>
+//			<td>First name:</td>
+//			<td><input type="text" name="studentFName"></td>
+//		</tr>
+//		<tr>
+//			<td>Last name:</td>
+//			<td><input type="text" name="studentLName"></td>
+//		</tr>
+//		<tr>
+//			<td>Date of birth:</td>
+//			<td><input type="date" name="studentDOB"></td>
+//		</tr>
+//		<tr>
+//			<td>Email:</td>
+//			<td><input type="text" name="studentEmail"></td>
+//		</tr>
+//		<tr>
+//			<td>Phone:</td>
+//			<td><input type="text" name="studentPhone"></td>
+//		</tr>
+//		<tr>
+//			<td>Address:</td>
+//			<td>
+//				<input type="radio" name="gender" id="male" value="Male">Male
+//				<input type="radio" name="gender" id="female" value="Female">Female
+//			</td>
+//		</tr>
+//		<tr>
+//			<td>Address:</td>
+//			<td><textarea name="studentAddress" rows="4" cols="50"></textarea></td>
+//		</tr>
+//		<tr>
+//			<td>City:</td>
+//			<td><input type="text" name="studentCity"></td>
+//		</tr>
+//		<tr>
+//			<td>Pin code:</td>
+//			<td><input type="text" name="studentPin"></td>
+//		</tr>
+//		<tr>
+//			<td>State:</td>
+//			<td><input type="text" name="studentState"></td>
+//		</tr>
+//		<tr>
+//			<td>Country:</td>
+//			<td><input type="text" name="studentCountry" value="India"></td>
+//		</tr>
+//		<tr>
+//			<td>Hobbies:</td>
+//			<td>
+//				Drawing
+//				<input type="checkbox" name="studentHobbies" value="Reading">
+//				Singing
+//				<input type="checkbox" name="studentHobbies" value="Writing">
+//				Dancing
+//				<input type="checkbox" name="studentHobbies" value="Playing">
+//				Sketching
+//				<input type="checkbox" name="studentHobbies" value="Playing">
+//				Others
+//				<input type="checkbox" name="studentHobbies" value="Playing">
+//				<input type="text" name="studentHobbies">
+//			</td>
+//		</tr>
+//		<tr>
+//			<td>Qualification:</td>
+//			<td>
+//				<table>
+//					<tr>
+//						<td>SL.No.Examination</td>
+//						<td>Board</td>
+//						<td>Percentage</td>
+//						<td>Year of Passing</td>
+//					</tr>
+//					<tr>
+//						<td>1.  Class X</td>
+//						<td><input type="text" name="studentBoard1"></td>
+//						<td><input type="text" name="studentPercentage1"></td>
+//						<td><input type="text" name="studentYear1"></td>
+//					</tr>
+//					<tr>
+//						<td>2.  Class XII</td>
+//						<td><input type="text" name="studentBoard2"></td>
+//						<td><input type="text" name="studentPercentage2"></td>
+//						<td><input type="text" name="studentYear2"></td>
+//					</tr>
+//					<tr>
+//						<td>3.  Graduation</td>
+//						<td><input type="text" name="studentBoard3"></td>
+//						<td><input type="text" name="studentPercentage3"></td>
+//						<td><input type="text" name="studentYear3"></td>
+//					</tr>
+//					<tr>
+//						<td>4.  Post Graduation</td>
+//						<td><input type="text" name="studentBoard4"></td>
+//						<td><input type="text" name="studentPercentage4"></td>
+//						<td><input type="text" name="studentYear4"></td>
+//					</tr>
+//					<tr>
+//						<td></td>
+//						<td>(10 char max)</td>
+//						<td>(upto 2 decimal)</td>
+//						<td></td>
+//					</tr>
+//				</table>
+//			</td>
+//		</tr>
+//		<tr>
+//			<td>Course Applied for</td>
+//			<td>
+//				BCA
+//				<input type="radio" name="studentCourse" value="BCA">
+//				B.Com
+//				<input type="radio" name="studentCourse" value="B.Com">
+//				B.Sc
+//				<input type="radio" name="studentCourse" value="B.Sc">
+//				A
+//				<input type="radio" name="studentCourse" value="A">
+//			</td>
+//		</tr>
+//		<tr>
+//			<td><input type="submit" value="Submit"></td>
+//			<td><input type="reset" value="Reset"></td>
+//		</tr>
+//	</table>
+		String studentFName = request.getParameter("studentFName");
+		String studentLName = request.getParameter("studentLName");
+		String studentDOB = request.getParameter("studentDOB");
+		String studentEmail = request.getParameter("studentEmail");
+		String studentPhone = request.getParameter("studentPhone");
+		String studentGender = request.getParameter("gender");
+		String studentAddress = request.getParameter("studentAddress");
+		String studentCity = request.getParameter("studentCity");
+		String studentPin = request.getParameter("studentPin");
+		String studentState = request.getParameter("studentState");
+		String studentCountry = request.getParameter("studentCountry");
+		String[] studentHobbies = request.getParameterValues("studentHobbies");
+		String studentBoard1 = request.getParameter("studentBoard1");
+		String studentPercentage1 = request.getParameter("studentPercentage1");
+		String studentYear1 = request.getParameter("studentYear1");
+		String studentBoard2 = request.getParameter("studentBoard2");
+		String studentPercentage2 = request.getParameter("studentPercentage2");
+		String studentYear2 = request.getParameter("studentYear2");
+		String studentBoard3 = request.getParameter("studentBoard3");
+		String studentPercentage3 = request.getParameter("studentPercentage3");
+		String studentYear3 = request.getParameter("studentYear3");
+		String studentBoard4 = request.getParameter("studentBoard4");
+		String studentPercentage4 = request.getParameter("studentPercentage4");
+		String studentYear4 = request.getParameter("studentYear4");
+		String studentCourse = request.getParameter("studentCourse");
+		
+	
+		Qualification qualification1 = new Qualification(studentBoard1, studentPercentage1, studentYear1);
+		Qualification qualification2 = new Qualification(studentBoard2, studentPercentage2, studentYear2);
+		Qualification qualification3 = new Qualification(studentBoard3, studentPercentage3, studentYear3);
+		Qualification qualification4 = new Qualification(studentBoard4, studentPercentage4, studentYear4);
+		
+//		public Student(String firstName, String lastName, String dob, String email, String phone, String gender,
+//				String address, String city, String pincode, String state, String country, String[] hobbies,
+//				Qualification qualification1, Qualification qualification2, Qualification qualification3,
+//				Qualification qualification4, String course) {
+//			
+//		}
+		Student student = new Student(studentFName, studentLName, studentDOB, studentEmail, studentPhone, studentGender, student
+				, studentCity, studentPin, studentState, studentCountry, studentHobbies, qualification1, qualification2, qualification3, qualification4, studentCourse);
+		
+		request.setAttribute("student", student);
+		request.getRequestDispatcher("studentDetails.jsp").forward(request, response);
+	}
+
+}

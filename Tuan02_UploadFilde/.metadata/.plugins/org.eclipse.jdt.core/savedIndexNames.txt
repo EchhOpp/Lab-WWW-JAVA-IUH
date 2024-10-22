@@ -1,0 +1,7 @@
+INDEX VERSION 1.134+D:\BaiTap\WWW\NguyenThanhLuan_21123021_Tuan02\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+4094044171.index
+2551653194.index
+1216021104.index
+468074160.index
+2497647066.index

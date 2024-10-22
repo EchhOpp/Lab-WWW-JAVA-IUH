@@ -1,7 +1,0 @@
-package student;
-
-public class Qualification {
-	private String board;
-	private String Percentage;
-	private String Year;
-}

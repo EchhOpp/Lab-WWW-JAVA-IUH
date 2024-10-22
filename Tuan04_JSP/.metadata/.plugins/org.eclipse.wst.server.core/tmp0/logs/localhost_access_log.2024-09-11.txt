@@ -1,0 +1,5 @@
+127.0.0.1 - - [11/Sep/2024:23:33:08 +0700] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [11/Sep/2024:23:33:19 +0700] "GET /JSPWithForm/ServletStudent HTTP/1.1" 200 23
+0:0:0:0:0:0:0:1 - - [11/Sep/2024:23:33:20 +0700] "GET /favicon.ico HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [11/Sep/2024:23:33:31 +0700] "GET /JSPWithForm/FormStudent.jsp HTTP/1.1" 200 3720
+0:0:0:0:0:0:0:1 - - [11/Sep/2024:23:33:33 +0700] "POST /JSPWithForm/ServletStudent HTTP/1.1" 200 540

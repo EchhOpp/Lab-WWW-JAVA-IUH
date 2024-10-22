@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+D:\BaiTap\WWW\NguyenThanhLuan_21123021_Tuan04\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3890004437.index
+1357598904.index
+1170576690.index
+4260421995.index
+3644813362.index
+2015881385.index

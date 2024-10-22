@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <div id="main" style="display: block; width: 40%;">
+        <div id="nav" style="text-align: center;">
+            <h1>File upload to Database</h1><br>
+            <h1>(multipart/form-data)</h1>
+        </div>
+
+        <form method="POST" action="FileUploadDBServlet" enctype="multipart/form-data">
+        	<table>
+        		<tr>
+                    <td>First name:</td>
+                    <td>
+                        <input type="tetx" name="firstName" size="50">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Last name:
+                    </td>
+                    <td>
+                        <input type="text" name="lastName" size="50">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>              
+                        Portrait Photo  
+                    </td>
+                    <td><input type="file" name="photo" size="50"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Upload">
+                    </td>
+                </tr>
+        	</table>
+        </form>
+    </div>
+</body>
+</html>

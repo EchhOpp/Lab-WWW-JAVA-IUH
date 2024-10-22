@@ -1,0 +1,93 @@
+package servletStudent;
+
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import student.Student;
+
+/**
+ * Servlet implementation class ServletStudent
+ */
+@WebServlet("/ServletStudent")
+public class ServletStudent extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    /**
+     * Default constructor. 
+     */
+    public ServletStudent() {
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		<form action="ServletStudent" method="post">
+//		<table>
+//			<tr>
+//				<td>Student first name:</td>
+//				<td><input type="text" name="studentFName"></td>
+//			</tr>
+//			<tr>
+//				<td>Student last name:</td>
+//				<td><input type="text" name="studentLName"></td>
+//			</tr>
+//			<tr>
+//				<td>Student date of birth:</td>
+//				<td><input type="date" name="studentDOB"></td>
+//			</tr>
+//			<tr>
+//				<td>Student Email:</td>
+//				<td><input type="text" name="studentEmail"></td>
+//			</tr>
+//			<tr>
+//				<td>Student Phone:</td>
+//				<td><input type="text" name="studentPhone"></td>
+//			</tr>
+//			<tr>
+//				<td>Student Address:</td>
+//				<td>
+//					<input type="radio" name="gender" id="male" value="Male">Male
+//					<input type="radio" name="gender" id="female" value="Female">Female
+//				</td>
+//			</tr>
+//			<tr>
+//				<td>Student Address:</td>
+//				<td><textarea name="studentAddress" rows="4" cols="50"></textarea></td>
+//			</tr>
+//			<tr>
+//				<td>Student City:</td>
+//				<td><input type="text" name="studentCity"></td>
+//			</tr>
+//			<tr>
+//				<td><input type="submit" value="Submit"></td>
+//			</tr>
+//		</table>
+//	</form>
+		String studentFName = request.getParameter("studentFName");
+		String studentLName = request.getParameter("studentLName");
+		String studentDOB = request.getParameter("studentDOB");
+		String studentEmail = request.getParameter("studentEmail");
+		String studentPhone = request.getParameter("studentPhone");
+		String studentGender = request.getParameter("gender");
+		String studentAddress = request.getParameter("studentAddress");
+		String studentCity = request.getParameter("studentCity");
+		
+		Student student = new Student(studentFName, studentLName, studentDOB, studentEmail, studentPhone, studentGender, studentAddress, studentCity);
+		request.setAttribute("student", student);
+	}
+
+}
