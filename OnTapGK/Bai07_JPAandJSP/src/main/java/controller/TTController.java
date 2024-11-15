@@ -75,31 +75,7 @@ public class TTController extends HttpServlet {
 
 	private void addTT(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		
-//		<tr>
-//		<td>Mã tin tức</td>
-//		<td><input type="text" name="txtmaTT"></td>
-//	</tr>
-//	<tr>
-//		<td>Tiêu đề</td>
-//		<td><input type="text" name="txttieuDe"></td>
-//	</tr>
-//	<tr>
-//		<td>Nội dung</td>
-//		<td><input type="text" name="txtnoiDungTT"></td>
-//	</tr>
-//	<tr>
-//		<td>Liên kết</td>
-//		<td><input type="text" name="txtlienKet"></td>
-//	</tr>
-//	<tr>
-//		<td>Mã danh mục</td>
-//		<td><input type="text" name="txtmaDM"></td>
-//	</tr>
-//	<tr>
-//		<td colspan="2"><input type="submit" value="Thêm mới"></td>
-//	</tr>
-		    
+
             String maTT = request.getParameter("txtmaTT");
             String tieuDe = request.getParameter("txttieuDe");
             String noiDungTT = request.getParameter("txtnoiDungTT");
