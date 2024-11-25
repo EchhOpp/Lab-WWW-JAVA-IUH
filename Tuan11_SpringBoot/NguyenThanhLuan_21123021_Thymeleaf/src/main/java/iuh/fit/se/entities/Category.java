@@ -8,14 +8,14 @@ import java.util.List;
 @Table(name = "category")
 public class Category {
     @Id
-    @Column(name = "category_id")
+    @Column(name = "cart_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int categoryId;
+    private int id;
 
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "category",fetch = FetchType.LAZY)
     private List<Product> products;
 
     public Category() {
@@ -25,12 +25,12 @@ public class Category {
         this.name = name;
     }
 
-    public int getCategoryId() {
-        return categoryId;
+    public int getId() {
+        return id;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -44,7 +44,7 @@ public class Category {
     @Override
     public String toString() {
         return "Category{" +
-                "categoryId=" + categoryId +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
     }

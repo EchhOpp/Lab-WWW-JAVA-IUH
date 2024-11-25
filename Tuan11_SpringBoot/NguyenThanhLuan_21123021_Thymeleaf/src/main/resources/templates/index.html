@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text="${sinhvien}">Trang chủ</h1>
+    <ul>
+        <li><a th:href="@{/}">Trang chủ</a></li>
+            <li><a th:href="@{/form}">Thêm sản phẩm</a></li>
+    </ul>
+    <table>
+        <tbody>
+            <tr>
+                <form action="/searchID" method="get">
+                    <label>ID: </label>
+                    <input type="text" name="id" placeholder="Enter product ID">
+                    <button type="submit">Search</button>
+                </form>
+            </tr>
+            <tr>
+                <form action="/searchName" method="get">
+                    <label>Name: </label>
+                    <input type="text" name="name">
+                    <button type="submit">Timkiem</button>
+                </form>
+            </tr>
+            <tr>
+                <form action="/searchDate" method="get">
+                    <label>Date: </label>
+                    <input type="date" name="date">
+                    <button type="submit">Timkiem</button>
+                </form>
+            </tr>
+        </tbody>
+    </table>
+
+    <table border="1" style="margin: 20px 0">
+        <thead>
+            <th>ID</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Register date</th>
+            <th>price</th>
+            <th>Detail</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${p}">
+                <td th:text="${product.id}">ID</td>
+                <td th:text="${product.code}">ID</td>
+                <td th:text="${product.name}">ID</td>
+                <td th:text="${product.description}">ID</td>
+                <td th:text="${product.registerDate}">ID</td>
+                <td th:text="${#numbers.formatCurrency(product.price)}">ID</td>
+                <td><a th:href="@{/}">Xem chi tiet</a></td>
+                <td><a th:href="@{/}">Xóa</a></td>
+                <td><a th:href="@{/}">Chỉnh sửa</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <span th:each="i : ${#numbers.sequence(0, tongPage-1)}">
+        <a th:href="@{|/?page=${i}|}"
+           th:classappend="${i == pageHienTai} ? 'current-page' : ''"
+           th:text="${i + 1}">1</a>
+    </span>
+</body>
+</html>

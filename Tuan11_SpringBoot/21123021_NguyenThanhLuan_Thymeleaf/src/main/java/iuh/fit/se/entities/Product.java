@@ -3,6 +3,8 @@ package iuh.fit.se.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
+import java.sql.Date;
+
 @Entity
 @Table(name = "product")
 public class Product {
@@ -27,7 +29,7 @@ public class Product {
 
     @Column(name = "register_date")
     @Past(message = "Register date must be in the past")
-    private String registerDate;
+    private Date registerDate;
 
     @Column(name = "price")
     @DecimalMin(value = "0.0", inclusive = false,message = "Price must be greater than 0")
