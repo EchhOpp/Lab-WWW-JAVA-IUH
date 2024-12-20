@@ -1,0 +1,45 @@
+<div xmlns:th="http://www.thymeleaf.org" class="menu-container">
+    <style>
+        .menu-container {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .menu-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 0 5px;
+            text-decoration: none;
+            color: #2c3e50;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-btn:hover {
+            background-color: #2c3e50;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .logout-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+        }
+        
+        .logout-btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+
+    <a class="menu-btn" th:href="@{/}">Home</a>
+    <a class="menu-btn" th:href="@{/userInfo}">User Info</a>
+    <a class="menu-btn" th:href="@{/admin}">Admin</a>
+    <a class="menu-btn logout-btn" th:if="${userPrincipal != null}" th:href="@{|/logout|}">Logout</a>
+
+</div>

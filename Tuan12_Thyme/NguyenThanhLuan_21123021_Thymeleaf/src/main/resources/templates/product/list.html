@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product List</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Product List</h1>
+    <div class="add-button-container">
+        <a class="btn btn-add" th:href="@{/add}">Add New Product</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Register Date</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}"></td>
+                <td th:text="${product.code}"></td>
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.description}"></td>
+                <td th:text="${#dates.format(product.registerDate, 'dd/MM/yyyy')}"></td>
+                <td th:text="${product.price}"></td>
+                <td class="actions">
+                    <a class="btn btn-view" th:href="@{/view/{id}(id=${product.id})}">View</a>
+                    <a class="btn btn-edit" th:href="@{/edit/{id}(id=${product.id})}">Edit</a>
+                    <a class="btn btn-delete" th:href="@{/delete/{id}(id=${product.id})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7">
+                    <div class="pagination">
+                        <a class="btn btn-pagination" th:if="${currentPage > 0}" th:href="@{/(page=${currentPage - 1})}">
+                            <i class="fas fa-chevron-left"></i> Previous
+                        </a>
+                        <div class="page-numbers">
+                            <a class="btn btn-pagination" th:each="i : ${#numbers.sequence(0, totalPages - 1)}" 
+                               th:class="${i == currentPage ? 'btn btn-pagination active' : 'btn btn-pagination'}" 
+                               th:href="@{/(page=${i})}" th:text="${i + 1}">
+                            </a>
+                        </div>
+                        <a class="btn btn-pagination" th:if="${currentPage < totalPages - 1}" th:href="@{/(page=${currentPage + 1})}">
+                            Next <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        
+        .add-button-container {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-edit {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .btn-delete {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .btn-add {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        .btn-view {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .pagination {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .page-numbers {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-pagination {
+            background-color: #fff;
+            color: #3498db;
+            border: 1px solid #3498db;
+            min-width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            border-radius: 50%;
+            padding: 0;
+        }
+
+        .btn-pagination.active {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-pagination:hover:not(.active) {
+            background-color: #f8f9fa;
+            border-color: #2980b9;
+            color: #2980b9;
+        }
+
+        .btn-pagination i {
+            font-size: 12px;
+        }
+    </style>
+</body>
+</html> 

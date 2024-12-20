@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Khong 10 nghi hoc</h1>
+    <form action="/search" method="get" style="margin: 10px 0px">
+        <input placeholder="nhap key" name="key" id="key"/>
+        <button type="submit">submit</button>
+    </form>
+    <form action="" method="get">
+        <select name="categoryid" id="categoryid">
+            <option value="">Chon 1 cai di fen</option>
+            <th:block th:each="category : ${categories}">
+                <option th:value="${category.id}" th:text="${category.name}">
+                    1
+                </option>
+            </th:block>
+        </select>
+        <button type="submit">submit</button>
+    </form>
+    <a th:href="@{/add}">
+        <h3>Add san pham</h3>
+    </a>
+    <table border="1">
+        <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}"></td>
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.descrpition}"></td>
+                <td th:text="${product.price}"></td>
+                <td>
+                    <a th:href="@{/view/{id}(id=${product.id})}">view</a>
+                </td>
+                <td>
+                    <a th:href="@{/update/{id}(id=${product.id})}">update</a>
+                </td>
+                <td>
+                    <a th:href="@{/delete/{id}(id=${product.id})}">delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <footer>
+        <a style="margin-right: 10px" th:each="i : ${#numbers.sequence(0, totalPage - 1)}"
+           th:text="${i + 1} "
+           th:href="@{/(pageNumber=${i})}"
+        > 1 </a>
+    </footer>
+</body>
+</html>
