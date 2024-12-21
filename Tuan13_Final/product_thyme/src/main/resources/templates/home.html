@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/search" method="get">
+        <input placeholder="nhap key" name="key" id="key">
+        <button type="submit">submit</button>
+    </form>
+    <form action="" method="get">
+        <select id="categoryid" name="categoryid">
+            <option value="">Chon 1 cai di fen</option>
+            <th:block th:each="item : ${category}">
+                <option th:value="${item.id}"
+                        th:text="${item.name}"></option>
+            </th:block>
+        </select>
+        <button type="submit">submit</button>
+    </form>
+    <a th:href="@{/add}">Them san pham</a>
+    <table border="1">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+        </thead>
+        <tbody>
+            <tr th:each="item : ${items}">
+                <td th:text="${item.id}"></td>
+                <td th:text="${item.name}"></td>
+                <td><a th:href="@{/view/{id}(id=${item.id})}">view</a></td>
+                <td><a th:href="@{/update/{id}(id=${item.id})}">update</a></td>
+                <td><a th:href="@{/delete/{id}(id=${item.id})}">delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <footer>
+        <a th:each="i: ${#numbers.sequence(0 , totalPage - 1)}"
+            th:text="${i + 1}"
+           th:href="@{/(pageNumber=${i})}"
+           style="margin-right: 10px"
+        ></a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm Sản Phẩm</title>
+</head>
+<body>
+<h1>Thêm Sản Phẩm Mới</h1>
+
+
+<form action="#" th:action="@{/add}" th:object="${product}" method="post">
+    <table>
+        <tr>
+            <td><label for="code">Mã sản phẩm:</label></td>
+            <td><input type="text" id="code" th:field="*{code}" placeholder="Nhập mã sản phẩm" required></td>
+        </tr>
+        <tr>
+            <td><label for="name">Tên sản phẩm:</label></td>
+            <td><input type="text" id="name" th:field="*{name}" placeholder="Nhập tên sản phẩm"></td>
+            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
+        </tr>
+        <tr>
+            <td><label for="description">Mô tả:</label></td>
+            <td><textarea id="description" th:field="*{desciption}" placeholder="Nhập mô tả" required></textarea></td>
+        </tr>
+        <tr>
+            <td><label for="price">Giá:</label></td>
+            <td><input type="number" id="price" th:field="*{price}" placeholder="Nhập giá sản phẩm" required></td>
+        </tr>
+        <tr>
+            <td><label for="category">Danh mục:</label></td>
+            <td>
+                <select id="category" th:field="*{category.id}">
+                    <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <button type="submit">Lưu sản phẩm</button>
+</form>
+</body>
+</html>

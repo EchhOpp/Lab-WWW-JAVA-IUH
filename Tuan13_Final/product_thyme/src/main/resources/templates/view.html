@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/search" method="get">
+        <input placeholder="nhap key" name="key" id="key">
+        <button type="submit">submit</button>
+    </form>
+    <table border="1">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+        </thead>
+        <tbody>
+            <tr th:each="item : ${items}">
+                <td th:text="${item.id}"></td>
+                <td th:text="${item.name}"></td>
+                <td><a th:href="@{/view/{id}(id=${item.id})}">view</a></td>
+                <td><a th:href="@{/update/{id}(id=${item.id})}">update</a></td>
+                <td><a th:href="@{/delete/{id}(id=${item.id})}">delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <footer>
+        <a th:href="@{/}"
+           style="margin-right: 10px"
+        >back</a>
+    </footer>
+</body>
+</html>

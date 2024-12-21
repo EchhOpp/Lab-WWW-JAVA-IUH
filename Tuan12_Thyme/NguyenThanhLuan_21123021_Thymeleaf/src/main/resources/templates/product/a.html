@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <<tbody>
+                <tr th:each="product : ${products}">
+                    <td th:text="${product.id}"></td>
+                    <td th:text="${product.code}"></td>
+                    <td th:text="${product.name}"></td>
+                    <td th:text="${product.description}"></td>
+                    <td th:text="${#dates.format(product.registerDate, 'dd/MM/yyyy')}"></td>
+                    <td th:text="${product.price}"></td>
+                    <td class="actions">
+                        <a class="btn btn-view" th:href="@{/view/{id}(id=${product.id})}">View</a>
+                        <a class="btn btn-edit" th:href="@{/edit/{id}(id=${product.id})}">Edit</a>
+                        <a class="btn btn-delete" th:href="@{/delete/{id}(id=${product.id})}">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+</body>
+</html>

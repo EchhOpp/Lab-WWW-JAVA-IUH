@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm Sản Phẩm</title>
+</head>
+<body>
+<h1>Thêm Sản Phẩm Mới</h1>
+
+<form action="#" th:action="@{/add}" th:object="${item}" method="post">
+    <table>
+        <tr>
+            <td><label for="name">Tên sản phẩm:</label></td>
+            <td><input type="text" id="name" th:field="*{param}" placeholder="Nhập tên sản phẩm"></td>
+            <td th:if="${#fields.hasErrors('param')}" th:errors="*{param}"></td>
+        </tr>
+    </table>
+    <button type="submit">Lưu sản phẩm</button>
+</form>
+</body>
+</html>

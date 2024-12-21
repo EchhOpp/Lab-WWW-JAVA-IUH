@@ -21,6 +21,7 @@
         </select>
         <button type="submit">submit</button>
     </form>
+
     <a th:href="@{/add}">
         <h3>Add san pham</h3>
     </a>
@@ -31,15 +32,9 @@
                 <td th:text="${product.name}"></td>
                 <td th:text="${product.descrpition}"></td>
                 <td th:text="${product.price}"></td>
-                <td>
-                    <a th:href="@{/view/{id}(id=${product.id})}">view</a>
-                </td>
-                <td>
-                    <a th:href="@{/update/{id}(id=${product.id})}">update</a>
-                </td>
-                <td>
-                    <a th:href="@{/delete/{id}(id=${product.id})}">delete</a>
-                </td>
+                <td><a th:href="@{/view/{id}(id=${product.id})}">view</a></td>
+                <td><a th:href="@{/update/{id}(id=${product.id})}">update</a></td>
+                <td><a th:href="@{/delete/{id}(id=${product.id})}">delete</a></td>
             </tr>
         </tbody>
     </table>
